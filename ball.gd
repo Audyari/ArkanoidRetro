@@ -103,6 +103,20 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	
 	# Emit signal untuk game manager
 	ball_hit_paddle.emit(area.global_position)
+	
+	# HILANGKAN BRICKS NYA
+	if area.get_parent().is_in_group("bricks"):
+		var brick = area.get_parent()
+		print("hit brick")
+
+		# Tween efek: scale dan opacity
+		var tween = create_tween()
+		tween.tween_property(brick, "scale", Vector2(0, 0), 0.3)
+		tween.tween_property(brick, "modulate:a", 0.0, 0.3)  # a = alpha/transparan
+
+		# Setelah tween selesai, hapus brick
+		tween.tween_callback(Callable(brick, "queue_free"))
+		
 
 func on_paddle_hit(area: Area2D) -> void:
 	"""Alternative method - bisa dipanggil manual juga"""
