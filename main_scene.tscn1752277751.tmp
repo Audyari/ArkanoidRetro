@@ -13,15 +13,15 @@ position = Vector2(400, 550)
 [node name="Ball" parent="." instance=ExtResource("2_2c62f")]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 372.0
-offset_top = 367.0
-offset_right = 412.0
-offset_bottom = 390.0
+offset_left = 363.0
+offset_top = 368.0
+offset_right = 403.0
+offset_bottom = 391.0
 text = "321	"
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 3.0
 one_shot = true
 autostart = true
 

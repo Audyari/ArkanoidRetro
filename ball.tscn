@@ -18,4 +18,8 @@ script = ExtResource("2_41u45")
 position = Vector2(-7.15256e-06, -7.15256e-06)
 shape = SubResource("RectangleShape2D_ktgx5")
 
+[node name="RestartTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
